@@ -1,6 +1,10 @@
 use wasm_bindgen::prelude::*;
 
+mod app;
+mod components;
+mod pages;
+
 #[wasm_bindgen]
 pub fn run_app() {
-    println!("Hello, world!");
+    yew::start_app::<app::App>();
 }
