@@ -35,5 +35,5 @@ jobs:
       - name: Run Test
         run: |
           cargo test
-          wasm-pack test --headless --chrome
-          wasm-pack test --headless --firefox
+          wasm-pack test frontend --headless --chrome
+          wasm-pack test frontend --headless --firefox
