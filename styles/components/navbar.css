@@ -1,0 +1,17 @@
+.navbar {
+    background-color: var(--navbar-bg);
+    font-size: 24px;
+}
+
+.navbar .logo {
+    height: 1em;
+    vertical-align: middle;
+}
+
+.navbar .daily {
+    font-weight: 500;
+}
+
+.navbar .boj {
+    font-weight: 700;
+}
