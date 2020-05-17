@@ -1,0 +1,8 @@
+[workspace]
+members = [
+    "frontend",
+    "api"
+]
+
+[profile.release]
+lto = true

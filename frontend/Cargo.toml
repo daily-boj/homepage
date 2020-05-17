@@ -1,0 +1,15 @@
+[package]
+name = "frontend"
+version = "0.1.0"
+authors = ["RanolP <public.ranolp@gmail.com>"]
+edition = "2018"
+description = "The frontend of daily-boj homepage"
+repository = "https://github.com/daily-boj/daily-boj.github.io/blob/master/frontend"
+license-file = "../LICENSE"
+
+[lib]
+crate-type = ["cdylib", "rlib"]
+
+[dependencies]
+wasm-bindgen = "0.2.62"
+yew = { version = "0.16.2", features = ["web-sys"] }
