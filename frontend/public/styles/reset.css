@@ -9,3 +9,8 @@ html, body {
 body {
     background-color: #d2d2ff;
 }
+
+a {
+    color: unset;
+    text-decoration: unset;
+}

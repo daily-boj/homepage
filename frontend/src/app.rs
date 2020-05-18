@@ -1,45 +1,42 @@
 use crate::components::Navbar;
+use crate::pages::*;
+use crate::route::AppRoute;
 use yew::prelude::*;
 use yew_router::prelude::*;
 
-pub struct App {
-    link: ComponentLink<Self>,
-}
-
-#[derive(Switch, Debug, Clone)]
-pub enum AppRoute {
-    #[to = "/"]
-    Index,
-}
+pub struct App {}
 
 impl Component for App {
     type Message = ();
     type Properties = ();
 
-    fn create(_: Self::Properties, link: ComponentLink<Self>) -> Self {
-        App { link }
+    fn create(_props: Self::Properties, _link: ComponentLink<Self>) -> Self {
+        App {}
     }
 
-    fn update(&mut self, _: Self::Message) -> ShouldRender {
+    fn update(&mut self, _msg: Self::Message) -> ShouldRender {
         false
     }
 
-    fn change(&mut self, _: Self::Properties) -> ShouldRender {
+    fn change(&mut self, _props: Self::Properties) -> ShouldRender {
         false
     }
 
     fn view(&self) -> Html {
         html! {
-            <>
-                <Navbar />
-                <Router<AppRoute, ()>
-                    render = Router::render(|switch: AppRoute| {
-                        match switch {
-                            AppRoute::Index => html!{ "Hello" },
+            <Router<AppRoute, ()>
+                render = Router::render(|switch: AppRoute| html! {
+                    <>
+                        <Navbar route=switch.clone()/>
+                        {
+                            match switch {
+                                AppRoute::Index => html!{ <IndexPage /> },
+                                AppRoute::Newbie => html!{ <NewbiePage /> },
+                            }
                         }
-                    })
-                />
-            </>
+                    </>
+                })
+            />
         }
     }
 }

@@ -37,8 +37,8 @@ jobs:
           cargo install just
           curl https://rustwasm.github.io/wasm-pack/installer/init.sh -sSf | sh
 
-      - name: Ready for Deploy
-        run: just ready-for-deploy
+      - name: Build Page
+        run: just build-page
 
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3

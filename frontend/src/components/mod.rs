@@ -1,3 +1,3 @@
 mod navbar;
 
-pub use navbar::*;
+pub use navbar::Navbar;

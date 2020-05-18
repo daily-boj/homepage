@@ -1,7 +1,5 @@
-build:
+build-page:
     wasm-pack build frontend --no-typescript --target web
-
-ready-for-deploy: build
     rm -rf dist/
     mkdir dist/
     cp -r frontend/pkg/** dist/
