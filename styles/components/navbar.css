@@ -1,7 +1,33 @@
 .navbar {
     background-color: var(--navbar-bg);
-    font-size: 24px;
+    font-size: 1.5rem;
     width: 100vw;
+    padding-left: 1rem;
+
+    position: fixed;
+    top: 0;
+}
+
+.navbar, .navbar-fake {
+    height: 3rem;
+}
+
+.navbar-fake {
+    margin-bottom: 1rem;
+}
+
+.navbar, .navbar a, .navbar nav {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.navbar a {
+    height: 100%;
+}
+
+.navbar .brand {
+    margin-right: 1rem;
 }
 
 .navbar .logo {
@@ -17,12 +43,14 @@
     font-weight: 700;
 }
 
-.navbar .spacing {
-    display: inline-block;
-    width: 4em;
+.navbar .nav {
+    padding: 0 1rem;
+    border-bottom: 4px solid transparent;
+    height: 100%;
 }
 
-.navbar .menu[data-is-selected=true] {
-    text-decoration-color: var(--menu-selected);
-    text-decoration: underline;
+.navbar .nav[data-is-selected=true] {
+    background-color: var(--navbar-bg-selected);
+    color: var(--menu-selected);
+    border-color: var(--menu-selected);
 }
