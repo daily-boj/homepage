@@ -34,19 +34,23 @@ impl Component for Navbar {
 
     fn view(&self) -> Html {
         html! {
-            <header class=("navbar")>
-                <RouterAnchor<AppRoute> route=AppRoute::Index>
-                    <object class="logo" type="image/svg+xml" data="logo.svg">{"Logo SVG"}</object>
-                    <span class="name">
-                        <span class="daily">{"Daily"}</span>{" "}
-                        <span class="boj">{"BOJ"}</span>
-                    </span>
-                </RouterAnchor<AppRoute>>
-                <span class="spacing" />
-                <RouterAnchor<AppRoute> route=AppRoute::Newbie>
-                    <span id="menu-newbie" class="menu" data-is-selected={self.props.route == AppRoute::Newbie}>{"신입 가이드"}</span>
-                </RouterAnchor<AppRoute>>
-            </header>
+            <>
+                <header class="navbar">
+                    <RouterAnchor<AppRoute> classes="brand" route=AppRoute::Index>
+                        <object class="logo" type="image/svg+xml" data="logo.svg">{"Logo SVG"}</object>
+                        <span class="name">
+                            <span class="daily">{"Daily"}</span>{" "}
+                            <span class="boj">{"BOJ"}</span>
+                        </span>
+                    </RouterAnchor<AppRoute>>
+                    <RouterAnchor<AppRoute> route=AppRoute::Newbie>
+                        <nav id="nav-newbie" class="nav" data-is-selected={self.props.route == AppRoute::Newbie}>
+                            {"신입 가이드"}
+                        </nav>
+                    </RouterAnchor<AppRoute>>
+                </header>
+                <div class="navbar-fake" />
+            </>
         }
     }
 }

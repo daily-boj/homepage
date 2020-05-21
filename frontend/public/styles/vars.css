@@ -1,4 +1,8 @@
 :root {
-    --navbar-bg: #ffffff;
-    --menu-selected: #a2a2ff;
+    --navbar-bg: hsl(230, 5%, 90%);
+    --navbar-bg-selected: hsl(230, 5%, 80%);
+
+    --menu-selected: hsl(230, 60%, 60%);
+    
+    --bg: hsl(230, 25%, 80%);
 }

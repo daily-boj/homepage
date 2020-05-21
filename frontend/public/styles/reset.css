@@ -6,10 +6,6 @@ html, body {
     max-width: 100vw; 
 }
 
-body {
-    background-color: #d2d2ff;
-}
-
 a {
     color: unset;
     text-decoration: unset;
