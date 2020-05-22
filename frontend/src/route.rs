@@ -5,6 +5,17 @@ use yew_router::prelude::*;
 pub enum AppRoute {
     #[to = "/homepage/newbie"]
     Newbie,
+    #[to = "/homepage/member"]
+    Member,
+    #[to = "/homepage/calendar"]
+    Calendar,
+    #[to = "/homepage/stat/tier"]
+    StatTier,
+    #[to = "/homepage/stat/solve"]
+    StatSolve,
+    #[to = "/homepage/branding"]
+    Branding,
+
     #[to = "/homepage"]
     Index,
 }

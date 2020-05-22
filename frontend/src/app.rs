@@ -30,8 +30,13 @@ impl Component for App {
                         <Navbar route=switch.clone()/>
                         {
                             match switch {
-                                AppRoute::Index => html!{ <IndexPage /> },
+                                AppRoute::Branding => html!{ <BrandingPage /> },
+                                AppRoute::Calendar => html!{ <CalendarPage /> },
+                                AppRoute::Member => html!{ <MemberPage /> },
                                 AppRoute::Newbie => html!{ <NewbiePage /> },
+                                AppRoute::StatSolve => html!{ <StatSolvePage /> },
+                                AppRoute::StatTier => html!{ <StatTierPage /> },
+                                AppRoute::Index => html!{ <IndexPage /> },
                             }
                         }
                     </>

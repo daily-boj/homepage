@@ -37,7 +37,7 @@ impl Component for Navbar {
             <>
                 <header class="navbar">
                     <RouterAnchor<AppRoute> classes="brand" route=AppRoute::Index>
-                        <object class="logo" type="image/svg+xml" data="logo.svg">{"Logo SVG"}</object>
+                        <object class="logo" type="image/svg+xml" data="images/logo.svg">{"Daily BOJ Logo"}</object>
                         <span class="name">
                             <span class="daily">{"Daily"}</span>{" "}
                             <span class="boj">{"BOJ"}</span>
