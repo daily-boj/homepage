@@ -33,6 +33,7 @@
 .navbar .logo {
     height: 1em;
     vertical-align: middle;
+    margin-right: 0.2rem;
 }
 
 .navbar .daily {
@@ -47,10 +48,18 @@
     padding: 0 1rem;
     border-bottom: 4px solid transparent;
     height: 100%;
+
+    transition: var(--tr-timing) background-color, box-shadow var(--tr-duration);
+}
+
+.navbar .nav:not([data-is-selected=true]):hover {
+    background-color: var(--navbar-bg-hover);
+    box-shadow: var(--drop-shadow);
 }
 
 .navbar .nav[data-is-selected=true] {
     background-color: var(--navbar-bg-selected);
     color: var(--menu-selected);
     border-color: var(--menu-selected);
+    box-shadow: var(--inner-shadow);
 }
