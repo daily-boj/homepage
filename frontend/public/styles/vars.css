@@ -1,10 +1,21 @@
 :root {
     --navbar-bg: hsl(230, 5%, 90%);
+    --navbar-bg-hover: hsl(230, 5%, 100%);
     --navbar-bg-selected: hsl(230, 5%, 80%);
 
     --menu-selected: hsl(230, 60%, 60%);
 
     --code-bg: hsl(230, 15%, 65%);
+    --code-fg: hsl(40, 75%, 75%);
+
+    --drop-shadow: 2px 4px 32px hsl(0, 5%, 5%, 0.3);
+    --inner-shadow: 
+        inset 2px 2px 7px hsl(0, 5%, 5%, 0.2),
+        inset -2px -2px 7px hsl(0, 5%, 5%, 0.2);
+
+    
+    --tr-timing: ease-out;
+    --tr-duration: 0.2s;
     
     --bg: hsl(230, 25%, 80%);
 }

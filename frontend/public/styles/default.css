@@ -4,6 +4,7 @@ body {
 
 code {
     background-color: var(--code-bg);
+    color: var(--code-fg);
     padding: 0.2em 0.4em;
     border-radius: 0.4em;
 }
