@@ -48,6 +48,16 @@ impl Component for Navbar {
                             {"신입 가이드"}
                         </nav>
                     </RouterAnchor<AppRoute>>
+                    <RouterAnchor<AppRoute> route=AppRoute::Member>
+                        <nav id="nav-member" class="nav" data-is-selected={self.props.route == AppRoute::Member}>
+                            {"멤버"}
+                        </nav>
+                    </RouterAnchor<AppRoute>>
+                    <RouterAnchor<AppRoute> route=AppRoute::Calendar>
+                        <nav id="nav-calendar" class="nav" data-is-selected={self.props.route == AppRoute::Calendar}>
+                            {"달력"}
+                        </nav>
+                    </RouterAnchor<AppRoute>>
                 </header>
                 <div class="navbar-fake" />
             </>
