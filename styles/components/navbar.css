@@ -2,10 +2,16 @@
     background-color: var(--navbar-bg);
     font-size: 1.5rem;
     width: 100vw;
-    padding-left: 1rem;
 
     position: fixed;
     top: 0;
+
+    display: grid;
+    grid-template-columns: auto 1fr;
+    grid-template-rows: 3rem auto;
+    grid-template-areas:
+        'brand nav'
+        'brand nav';
 }
 
 .navbar, .navbar-fake {
@@ -16,18 +22,19 @@
     margin-bottom: 1rem;
 }
 
-.navbar, .navbar a, .navbar nav {
+.navbar .collapse, .navbar a, .navbar nav {
     display: flex;
     flex-direction: row;
     align-items: center;
 }
 
-.navbar a {
+.navbar .collapse, .navbar a {
     height: 100%;
 }
 
 .navbar .brand {
-    margin-right: 1rem;
+    margin: 0 1rem;
+    grid-area: brand;
 }
 
 .navbar .logo {
@@ -44,22 +51,98 @@
     font-weight: 700;
 }
 
-.navbar .nav {
+.navbar nav {
     padding: 0 1rem;
-    border-bottom: 4px solid transparent;
     height: 100%;
 
     transition: var(--tr-timing) background-color, box-shadow var(--tr-duration);
 }
 
-.navbar .nav:not([data-is-selected=true]):hover {
+.navbar nav:not([data-is-selected=true]):hover {
     background-color: var(--navbar-bg-hover);
     box-shadow: var(--drop-shadow);
 }
 
-.navbar .nav[data-is-selected=true] {
+.navbar nav[data-is-selected=true] {
     background-color: var(--navbar-bg-selected);
     color: var(--menu-selected);
     border-color: var(--menu-selected);
     box-shadow: var(--inner-shadow);
+}
+
+.navbar .collapse {
+    grid-area: nav;
+}
+
+.navbar .toggler-view {
+    grid-area: toggler;
+    margin-left: auto;
+}
+
+.navbar .toggler-view::before {
+    font-family: 'Material Icons Outlined';
+    font-feature-settings: 'liga';
+    font-size: 2rem;
+    display: inline-block;
+    
+    width: 3rem;
+    height: 3rem;
+
+    text-align: center;
+    vertical-align: -50%;
+}
+
+#collapse-button:checked ~ .navbar .toggler-view::before {
+    content: 'menu';
+}
+
+#collapse-button:not(:checked) ~ .navbar .toggler-view::before {
+    content: 'close';
+}
+
+#collapse-button {
+    position: absolute;
+    visibility: hidden;
+}
+
+@media screen and (min-width: 600px) {
+    .navbar .toggler-view {
+        display: none;
+    }
+    .navbar .collapse {
+        flex-direction: row;
+    }
+    .navbar nav {
+        border-bottom: 4px solid transparent;
+    }
+}
+@media screen and (max-width: 599px) {
+    #collapse-button:not(:checked) ~ .navbar, #collapse-button:not(:checked) ~ .navbar-fake {
+        height: calc(3rem * 4);
+    }
+    #collapse-button:checked ~ .navbar {
+        grid-template-areas:
+            'brand toggler'
+            'brand toggler';
+    }
+    #collapse-button:not(:checked) ~ .navbar {
+        grid-template-areas:
+            'brand toggler'
+            '  nav     nav';
+    }
+    
+    .navbar .collapse {
+        flex-direction: column;
+        align-items: stretch;
+        transition: var(--tr-timing) height var(--tr-duration);
+    }
+    .navbar a nav {
+        width: 100%;
+    }
+    .navbar nav {
+        border-left: 4px solid transparent;
+    }
+    #collapse-button:checked ~ .navbar .collapse {
+        display: none;
+    }
 }
