@@ -1,5 +1,5 @@
 build-page mode='dev':
-    #!/usr/bin/bash
+    #!/bin/bash
     echo [debug] mode={{mode}}
     if [ '{{mode}}' == 'deploy' ]; then \
         export PUBLIC_URL="https://daily-boj.github.io/homepage"; \
