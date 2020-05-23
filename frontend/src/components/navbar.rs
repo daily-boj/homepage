@@ -1,5 +1,5 @@
 use crate::asset;
-use crate::route::AppRoute;
+use crate::route::*;
 use yew::prelude::*;
 use yew_router::prelude::*;
 
@@ -38,32 +38,32 @@ impl Component for Navbar {
             <>
                 <input type="checkbox" id="collapse-button" />
                 <header class="navbar">
-                    <RouterAnchor<AppRoute> classes="brand" route=AppRoute::Index>
+                    <RouterAnchor<BaseRoute> classes="brand" route=AppRoute::Index.to_base_route()>
                         <object class="logo" type="image/svg+xml" data=asset!("images/logo.svg")>{"Daily BOJ Logo"}</object>
                         <span class="name">
                             <span class="daily">{"Daily"}</span>{" "}
                             <span class="boj">{"BOJ"}</span>
                         </span>
-                    </RouterAnchor<AppRoute>>
+                    </RouterAnchor<BaseRoute>>
 
                     <label for="collapse-button" class="toggler-view" aria-text="collapse button" />
 
                     <div class="collapse">
-                        <RouterAnchor<AppRoute> route=AppRoute::Newbie>
+                        <RouterAnchor<BaseRoute> route=AppRoute::Newbie.to_base_route()>
                             <nav id="nav-newbie" data-is-selected={self.props.route == AppRoute::Newbie}>
                                 {"신입 가이드"}
                             </nav>
-                        </RouterAnchor<AppRoute>>
-                        <RouterAnchor<AppRoute> route=AppRoute::Member>
+                        </RouterAnchor<BaseRoute>>
+                        <RouterAnchor<BaseRoute> route=AppRoute::Member.to_base_route()>
                             <nav id="nav-member" data-is-selected={self.props.route == AppRoute::Member}>
                                 {"멤버"}
                             </nav>
-                        </RouterAnchor<AppRoute>>
-                        <RouterAnchor<AppRoute> route=AppRoute::Calendar>
+                        </RouterAnchor<BaseRoute>>
+                        <RouterAnchor<BaseRoute> route=AppRoute::Calendar.to_base_route()>
                             <nav id="nav-calendar" data-is-selected={self.props.route == AppRoute::Calendar}>
                                 {"달력"}
                             </nav>
-                        </RouterAnchor<AppRoute>>
+                        </RouterAnchor<BaseRoute>>
                     </div>
                 </header>
                 <div class="navbar-fake" />

@@ -28,3 +28,15 @@ pub enum AppRoute {
     #[to = "/"]
     Index,
 }
+
+impl AppRoute {
+    pub fn to_base_route(self) -> BaseRoute {
+        BaseRoute(self)
+    }
+}
+
+impl Into<BaseRoute> for AppRoute {
+    fn into(self) -> BaseRoute {
+        self.to_base_route()
+    }
+}

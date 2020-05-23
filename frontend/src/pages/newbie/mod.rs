@@ -1,4 +1,4 @@
-use crate::route::AppRoute;
+use crate::route::*;
 use yew::prelude::*;
 use yew_router::prelude::*;
 
@@ -24,9 +24,9 @@ impl Component for NewbiePage {
         html! {
             <ul>
                 <li>
-                    <RouterAnchor<AppRoute> route=AppRoute::Member>
+                    <RouterAnchor<BaseRoute> route=AppRoute::Member.to_base_route()>
                         {"관리자"}
-                    </RouterAnchor<AppRoute>>
+                    </RouterAnchor<BaseRoute>>
                     {"에게 그룹 초대를 요청해주세요."}
                     <ul>
                         <li>{"Baekjoon Online Judge"}</li>
