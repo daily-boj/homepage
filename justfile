@@ -1,7 +1,7 @@
 build-page mode='dev':
-    #!/usr/bin/env sh
+    #!/usr/bin/bash
     echo [debug] mode={{mode}}
-    if [ {{mode}} == 'deploy' ]; then \
+    if [ '{{mode}}' == 'deploy' ]; then \
         export PUBLIC_URL="https://daily-boj.github.io/homepage"; \
         wasm-pack build frontend --no-typescript --target web --release -- --features deploy; \
     else \
