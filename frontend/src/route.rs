@@ -1,21 +1,30 @@
 use yew_router::prelude::*;
 
-// TODO: Is there an way to specify router basepath?
+#[cfg(feature = "deploy")]
+#[derive(Switch, Debug, Clone, PartialEq)]
+#[to = "homepage{*}"]
+pub struct BaseRoute(pub AppRoute);
+
+#[cfg(not(feature = "deploy"))]
+#[derive(Switch, Debug, Clone, PartialEq)]
+#[to = "{*}"]
+pub struct BaseRoute(pub AppRoute);
+
 #[derive(Switch, Debug, Clone, PartialEq)]
 pub enum AppRoute {
-    #[to = "/homepage/newbie"]
+    #[to = "/newbie"]
     Newbie,
-    #[to = "/homepage/member"]
+    #[to = "/member"]
     Member,
-    #[to = "/homepage/calendar"]
+    #[to = "/calendar"]
     Calendar,
-    #[to = "/homepage/stat/tier"]
+    #[to = "/stat/tier"]
     StatTier,
-    #[to = "/homepage/stat/solve"]
+    #[to = "/stat/solve"]
     StatSolve,
-    #[to = "/homepage/branding"]
+    #[to = "/branding"]
     Branding,
 
-    #[to = "/homepage"]
+    #[to = "/"]
     Index,
 }

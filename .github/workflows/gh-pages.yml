@@ -38,7 +38,7 @@ jobs:
           curl https://rustwasm.github.io/wasm-pack/installer/init.sh -sSf | sh
 
       - name: Build Page
-        run: just build-page
+        run: just build-page deploy
 
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3

@@ -1,9 +1,10 @@
-#![recursion_limit = "256"]
+#![recursion_limit = "512"]
 
 use wasm_bindgen::prelude::*;
 
 mod app;
 mod components;
+mod constants;
 mod pages;
 mod route;
 

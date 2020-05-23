@@ -1,6 +1,6 @@
 use crate::components::Navbar;
 use crate::pages::*;
-use crate::route::AppRoute;
+use crate::route::{AppRoute, BaseRoute};
 use yew::prelude::*;
 use yew_router::prelude::*;
 
@@ -24,8 +24,8 @@ impl Component for App {
 
     fn view(&self) -> Html {
         html! {
-            <Router<AppRoute, ()>
-                render = Router::render(|switch: AppRoute| html! {
+            <Router<BaseRoute, ()>
+                render = Router::render(|BaseRoute(switch): BaseRoute| html! {
                     <>
                         <Navbar route=switch.clone()/>
                         {

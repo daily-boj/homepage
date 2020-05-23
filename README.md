@@ -10,6 +10,7 @@
 - 최신 [Rustup](https://rustup.rs/)
 - [wasm-pack](https://github.com/rustwasm/wasm-pack)
 - [just](https://github.com/casey/just)
+- envsubst (GNU gettext)
 
 ### Build Page
 

@@ -10,6 +10,9 @@ license-file = "../LICENSE"
 [lib]
 crate-type = ["cdylib", "rlib"]
 
+[features]
+deploy = []
+
 [dependencies]
 wasm-bindgen = "0.2.62"
 yew = { version = "0.16.2", features = ["web-sys"] }
