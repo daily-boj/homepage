@@ -1,6 +1,7 @@
 body {
     background-color: var(--bg);
     letter-spacing: -0.04em;
+    font-size: 1.3rem;
 }
 
 code {
