@@ -13,6 +13,8 @@
         inset 2px 2px 7px hsl(0, 5%, 5%, 0.2),
         inset -2px -2px 7px hsl(0, 5%, 5%, 0.2);
 
+    --link: hsl(230, 85%, 75%);
+    --link-visited: hsl(270, 85%, 75%);
     
     --tr-timing: ease-out;
     --tr-duration: 0.2s;

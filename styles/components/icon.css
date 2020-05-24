@@ -1,0 +1,19 @@
+.icon {
+    height: 1em;
+    vertical-align: middle;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.icon.material {
+    font-family: 'Material Icons Outlined';
+    font-feature-settings: 'liga';
+    letter-spacing: normal;
+    line-height: 1;
+}
+
+.icon.devicons {
+    font-family: 'devicons';
+    letter-spacing: normal;
+    line-height: 1;
+}
