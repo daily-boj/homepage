@@ -1,6 +1,6 @@
+use crate::components::link;
 use crate::route::*;
 use yew::prelude::*;
-use yew_router::prelude::*;
 
 pub struct NewbiePage {}
 
@@ -24,13 +24,21 @@ impl Component for NewbiePage {
         html! {
             <ul>
                 <li>
-                    <RouterAnchor<BaseRoute> route=AppRoute::Member.to_base_route()>
+                    <link::Internal to=AppRoute::Member>
                         {"관리자"}
-                    </RouterAnchor<BaseRoute>>
+                    </link::Internal>
                     {"에게 그룹 초대를 요청해주세요."}
                     <ul>
-                        <li>{"Baekjoon Online Judge"}</li>
-                        <li>{"GitHub"}</li>
+                        <li>
+                            <link::External to="https://www.acmicpc.net/group/7875">
+                                {"Baekjoon Online Judge"}
+                            </link::External>
+                        </li>
+                        <li>
+                            <link::External to="https://github.com/daily-boj/">
+                                {"GitHub"}
+                                </link::External>
+                        </li>
                     </ul>
                 </li>
                 <li>
@@ -62,9 +70,9 @@ impl Component for NewbiePage {
                     {"복습의 날 이전에는 예외적으로 문제 풀이만 공유해요."}
                 </li>
                 <li>
-                    <a href="https://solved.ac">
+                    <link::External to="https://solved.ac">
                         {"solved.ac 확장"}
-                    </a>
+                    </link::External>
                     {"을 설치하면 문제 레벨이 보여서 도움이 돼요."}
                 </li>
                 <li>

@@ -1,0 +1,8 @@
+.link {
+    color: var(--link);
+    text-decoration: underline;
+}
+
+.link:visited {
+    color: var(--link-visted);
+}

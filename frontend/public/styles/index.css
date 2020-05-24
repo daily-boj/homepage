@@ -8,3 +8,5 @@
 
 /* Components */
 @import './components/navbar.css';
+@import './components/icon.css';
+@import './components/link.css';

@@ -25,6 +25,11 @@
     align-items: center;
 }
 
+.navbar a {
+    color: unset;
+    text-decoration: unset;
+}
+
 .navbar .collapse, .navbar a {
     height: 100%;
 }

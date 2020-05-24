@@ -1,7 +1,7 @@
 use crate::asset;
+use crate::components::link;
 use crate::route::*;
 use yew::prelude::*;
-use yew_router::prelude::*;
 
 pub struct Navbar {
     props: NavbarProps,
@@ -20,7 +20,7 @@ impl Component for Navbar {
         Navbar { props }
     }
 
-    fn update(&mut self, _: Self::Message) -> ShouldRender {
+    fn update(&mut self, _msg: Self::Message) -> ShouldRender {
         false
     }
 
@@ -38,32 +38,32 @@ impl Component for Navbar {
             <>
                 <input type="checkbox" id="collapse-button" />
                 <header class="navbar">
-                    <RouterAnchor<BaseRoute> classes="brand" route=AppRoute::Index.to_base_route()>
+                    <link::Internal to=AppRoute::Index class="brand">
                         <object class="logo" type="image/svg+xml" data=asset!("images/logo.svg")>{"Daily BOJ Logo"}</object>
                         <span class="name">
                             <span class="daily">{"Daily"}</span>{" "}
                             <span class="boj">{"BOJ"}</span>
                         </span>
-                    </RouterAnchor<BaseRoute>>
+                    </link::Internal>
 
                     <label for="collapse-button" class="toggler-view" aria-text="collapse button" />
 
                     <div class="collapse">
-                        <RouterAnchor<BaseRoute> route=AppRoute::Newbie.to_base_route()>
+                        <link::Internal to=AppRoute::Newbie>
                             <nav id="nav-newbie" data-is-selected={self.props.route == AppRoute::Newbie}>
                                 {"신입 가이드"}
                             </nav>
-                        </RouterAnchor<BaseRoute>>
-                        <RouterAnchor<BaseRoute> route=AppRoute::Member.to_base_route()>
+                        </link::Internal>
+                        <link::Internal to=AppRoute::Member>
                             <nav id="nav-member" data-is-selected={self.props.route == AppRoute::Member}>
                                 {"멤버"}
                             </nav>
-                        </RouterAnchor<BaseRoute>>
-                        <RouterAnchor<BaseRoute> route=AppRoute::Calendar.to_base_route()>
+                        </link::Internal>
+                        <link::Internal to=AppRoute::Calendar>
                             <nav id="nav-calendar" data-is-selected={self.props.route == AppRoute::Calendar}>
                                 {"달력"}
                             </nav>
-                        </RouterAnchor<BaseRoute>>
+                        </link::Internal>
                     </div>
                 </header>
                 <div class="navbar-fake" />

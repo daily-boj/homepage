@@ -14,6 +14,7 @@ crate-type = ["cdylib", "rlib"]
 deploy = []
 
 [dependencies]
+url = "2.1.1"
 wasm-bindgen = "0.2.62"
 yew = { version = "0.16.2", features = ["web-sys"] }
 yew-router = "0.13.0"
