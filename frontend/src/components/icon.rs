@@ -48,7 +48,7 @@ impl Component for Icon {
             },
             IconKind::AcmIcpc => html! {
                 <object class="icon solvedac" type="image/svg+xml" data=asset!("images/baekjoon-square.svg")>
-                    {"SolvedAC Icon"}
+                    {"Baekjoon Online Judge Icon"}
                 </object>
             },
             IconKind::Material(name) => html! {
