@@ -2,7 +2,7 @@ use yew_router::prelude::*;
 
 #[cfg(feature = "deploy")]
 #[derive(Switch, Debug, Clone, PartialEq)]
-#[to = "homepage{*}"]
+#[to = "/homepage{*}"]
 pub struct BaseRoute(pub AppRoute);
 
 #[cfg(not(feature = "deploy"))]
