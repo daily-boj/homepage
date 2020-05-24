@@ -37,9 +37,9 @@ impl Component for InternalLink {
 
     fn view(&self) -> Html {
         html! {
-            <RouterAnchor<AppRoute> classes=format!("{} {}", "link internal", self.props.class) route=self.props.to.clone()>
+            <RouterAnchor<BaseRoute> classes=format!("{} {}", "link internal", self.props.class) route=self.props.to.clone().to_base_route()>
                 {self.props.children.render()}
-            </RouterAnchor<AppRoute>>
+            </RouterAnchor<BaseRoute>>
         }
     }
 }
