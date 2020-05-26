@@ -8,7 +8,7 @@ pub struct Icon {
 #[derive(Clone, PartialEq)]
 pub enum IconKind {
     SolvedAC,
-    AcmIcpc,
+    Boj,
     Material(String),
     Devicons(char),
 }
@@ -43,11 +43,11 @@ impl Component for Icon {
         match &self.props.kind {
             IconKind::SolvedAC => html! {
                 <object class="icon solvedac" type="image/svg+xml" data="https://static.solved.ac/logo.svg">
-                    {"SolvedAC Icon"}
+                    {"Solved AC Icon"}
                 </object>
             },
-            IconKind::AcmIcpc => html! {
-                <object class="icon solvedac" type="image/svg+xml" data=asset!("images/baekjoon-square.svg")>
+            IconKind::Boj => html! {
+                <object class="icon boj" type="image/svg+xml" data=asset!("images/baekjoon-square.svg")>
                     {"Baekjoon Online Judge Icon"}
                 </object>
             },

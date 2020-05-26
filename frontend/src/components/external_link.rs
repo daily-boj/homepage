@@ -40,15 +40,13 @@ impl Component for ExternalLink {
         let icon = match parsed {
             Ok(url) => url.domain().and_then(|domain| match domain {
                 "solved.ac" => Some(html! { <Icon kind=IconKind::SolvedAC /> }),
-                "acmicpc.net" | "www.acmicpc.net" => {
-                    Some(html! { <Icon kind=IconKind::AcmIcpc /> })
-                }
+                "acmicpc.net" | "www.acmicpc.net" => Some(html! { <Icon kind=IconKind::Boj /> }),
                 "github.com" => Some(html! { <Icon kind=IconKind::Devicons('\u{e609}') /> }),
                 _ => None,
             }),
             _ => None,
         }
-        .unwrap_or_else(|| html! { <Icon kind=IconKind::Material("launch".into()) /> });
+        .unwrap_or_else(|| html! { <Icon kind=IconKind::Material("launch".to_owned()) /> });
         html! {
             <a class=("link", "external", self.props.class.clone()) href=self.props.to.clone()>
                 {icon}
