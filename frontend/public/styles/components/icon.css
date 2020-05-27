@@ -3,6 +3,7 @@
     vertical-align: middle;
     text-decoration: none;
     display: inline-block;
+    pointer-events: none;
 }
 
 .icon.material {
