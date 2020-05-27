@@ -4,7 +4,17 @@
     --navbar-bg-selected: hsl(230, 5%, 80%);
 
     --menu-selected: hsl(230, 60%, 60%);
+}
 
+:root {
+    --introduction-bg: hsl(0, 10%, 95%);
+    --introduction-fg: hsl(230, 10%, 5%);
+
+    --catchphrase-bg: hsl(0, 10%, 95%);
+    --catchphrase-fg: hsl(230, 10%, 5%);
+}
+
+:root {
     --code-bg: hsl(230, 15%, 65%);
     --code-fg: hsl(40, 75%, 75%);
 
