@@ -10,12 +10,12 @@
     color: var(--introduction-fg);
 
     margin: 32px;
-    padding: 4rem 2rem;
 }
 
 @media screen and (max-width: 899px) {
     .page#index .introduction {
         margin: 0;
+        padding: 1rem 1rem;
     }
 
     .page#index #landing .catchphrase {
@@ -28,12 +28,19 @@
 @media screen and (min-width: 900px) {
     .page#index .introduction {
         max-width: 768px;
+        padding: 4rem 2rem;
     }
 
     .page#index #landing .catchphrase {
         font-size: 2.5rem;
         bottom: 8rem;
         right: 4rem;
+    }
+}
+
+@media screen and (max-width: 450px) {
+    .page#index #landing .catchphrase {
+        display: none;
     }
 }
 
