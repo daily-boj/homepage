@@ -33,6 +33,17 @@ impl AppRoute {
     pub fn to_base_route(self) -> BaseRoute {
         BaseRoute(self)
     }
+    pub fn id(&self) -> &'static str {
+        match self {
+            AppRoute::Newbie => "newbie",
+            AppRoute::Member => "member",
+            AppRoute::Calendar => "calendar",
+            AppRoute::StatTier => "stat-tier",
+            AppRoute::StatSolve => "stat-solve",
+            AppRoute::Branding => "branding",
+            AppRoute::Index => "index",
+        }
+    }
 }
 
 impl Into<BaseRoute> for AppRoute {

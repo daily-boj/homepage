@@ -41,7 +41,7 @@ impl Component for Navbar {
                     <link::Internal to=AppRoute::Index class="brand">
                         <object class="logo" type="image/svg+xml" data=asset!("images/logo.svg")>{"Daily BOJ Logo"}</object>
                         <span class="name">
-                            <span class="daily">{"Daily"}</span>{" "}
+                            <span class="daily">{"Daily"}</span>{"\u{00a0}"}
                             <span class="boj">{"BOJ"}</span>
                         </span>
                     </link::Internal>
