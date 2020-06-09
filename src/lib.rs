@@ -10,5 +10,7 @@ mod route;
 
 #[wasm_bindgen]
 pub fn run_app() {
+    #[cfg(not(feature = "deploy"))]
+    wasm_logger::init(wasm_logger::Config::default());
     yew::start_app::<app::App>();
 }

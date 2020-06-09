@@ -11,6 +11,8 @@
     grid-template-rows: 3rem auto;
 
     z-index: 100;
+    
+    user-select: none;
 }
 
 .navbar, .navbar-fake {

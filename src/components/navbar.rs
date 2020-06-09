@@ -5,6 +5,8 @@ use yew::prelude::*;
 
 pub struct Navbar {
     props: NavbarProps,
+    link: ComponentLink<Navbar>,
+    expanded: bool,
 }
 
 #[derive(Properties, Clone, PartialEq)]
@@ -12,15 +14,32 @@ pub struct NavbarProps {
     pub route: AppRoute,
 }
 
+pub enum NavbarMsg {
+    Check,
+    Uncheck,
+}
+
 impl Component for Navbar {
-    type Message = ();
+    type Message = NavbarMsg;
     type Properties = NavbarProps;
 
-    fn create(props: Self::Properties, _link: ComponentLink<Self>) -> Self {
-        Navbar { props }
+    fn create(props: Self::Properties, link: ComponentLink<Self>) -> Self {
+        Navbar { 
+            props,
+            link,
+            expanded: false,
+        }
     }
 
-    fn update(&mut self, _msg: Self::Message) -> ShouldRender {
+    fn update(&mut self, msg: Self::Message) -> ShouldRender {
+        match msg {
+            NavbarMsg::Check => {
+                self.expanded = false;
+            }
+            NavbarMsg::Uncheck => {
+                self.expanded = true;
+            }
+        }
         false
     }
 
@@ -34,9 +53,17 @@ impl Component for Navbar {
     }
 
     fn view(&self) -> Html {
+        let oninput = self.link.callback(|e: InputData| {
+            #[cfg(not(feature = "deploy"))]
+            log::debug!("{}", e.value);
+            match e.value.as_ref() {
+                "on" => NavbarMsg::Check,
+                _ => NavbarMsg::Uncheck,
+            }
+        });
         html! {
             <>
-                <input type="checkbox" id="collapse-button" />
+                <input type="checkbox" id="collapse-button" checked=!self.expanded oninput=oninput/>
                 <header class="navbar">
                     <link::Internal to=AppRoute::Index class="brand">
                         <object class="logo" type="image/svg+xml" data=asset!("images/logo.svg")>{"Daily BOJ Logo"}</object>
