@@ -14,34 +14,14 @@ jobs:
 
       - uses: actions/checkout@v2
 
-      - name: Cache Cargo Registry
-        uses: actions/cache@v1
-        with:
-          path: ~/.cargo/registry
-          key: ${{ runner.os }}-cargo-registry-${{ hashFiles('**/Cargo.lock') }}
-
-      - name: Cache Cargo Index
-        uses: actions/cache@v1
-        with:
-          path: ~/.cargo/git
-          key: ${{ runner.os }}-cargo-index-${{ hashFiles('**/Cargo.lock') }}
-
-      - name: Cache Cargo Build
-        uses: actions/cache@v1
-        with:
-          path: target
-          key: ${{ runner.os }}-cargo-build-target-${{ hashFiles('**/Cargo.lock') }}
-
       - name: Install
-        run: |
-          cargo install just
-          curl https://rustwasm.github.io/wasm-pack/installer/init.sh -sSf | sh
+        run: npm install
 
       - name: Build Page
-        run: just build-page deploy
+        run: npm run build
 
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.PAGE_TOKEN }}
-          publish_dir: ./dist
+          publish_dir: ./build
