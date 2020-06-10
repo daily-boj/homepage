@@ -9,9 +9,6 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
-      - name: Update Rust
-        run: rustup update
-
       - uses: actions/checkout@v2
 
       - name: Install

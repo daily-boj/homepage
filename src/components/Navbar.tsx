@@ -168,12 +168,12 @@ const Navbar: FC = () => (
     <NavbarHeader>
       <NavLink to="/">
         <Brand>
-          <Logo type="image/svg+xml" data={asset("images/logo.svg")}>
+          <Logo type="image/svg+xml" data={asset('images/logo.svg')}>
             Daily BOJ Logo
           </Logo>
           <span>
-            <span css={css`font-weight: 500;`}>{"Daily"}</span>&nbsp;
-            <span css={css`font-weight: 700;`}>{"BOJ"}</span>
+            <span css={css`font-weight: 500;`}>{'Daily'}</span>&nbsp;
+            <span css={css`font-weight: 700;`}>{'BOJ'}</span>
           </span>
         </Brand>
       </NavLink>

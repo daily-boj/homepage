@@ -36,7 +36,7 @@ const Icon: FC<IconProps> = ({ kind, value }) => {
     );
   } else if (kind === 'boj') {
     return (
-      <object css={icon} type="image/svg+xml" data={asset("images/baekjoon-square.svg")}>
+      <object css={icon} type="image/svg+xml" data={asset('images/baekjoon-square.svg')}>
         Baekjoon Online Judge Icon
       </object>
     );
@@ -54,6 +54,6 @@ const Icon: FC<IconProps> = ({ kind, value }) => {
     );
   }
   return null;
-}
+};
 
 export default Icon;

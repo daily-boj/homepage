@@ -27,8 +27,8 @@ export const InnerShadow = `
 export const Link = hsl(230, 0.85, 0.75);
 export const LinkVisited = hsl(270, 0.85, 0.75);
 
-export const TransitionTiming = `ease-out`;
-export const TransitionDuration = `0.2s`;
+export const TransitionTiming = 'ease-out';
+export const TransitionDuration = '0.2s';
 
 export const Background = hsl(230, 0.25, 0.80);
 

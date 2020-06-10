@@ -3,7 +3,7 @@ import { jsx } from '@emotion/core';
 
 const StatSolvePage: FC = () => (
   <Fragment>
-    {"Statistics of solve rate"}
+    {'Statistics of solve rate'}
   </Fragment>
 );
 
