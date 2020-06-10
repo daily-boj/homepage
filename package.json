@@ -28,7 +28,7 @@
   },
   "scripts": {
     "start": "EXTEND_ESLINT=true react-scripts start",
-    "build": "EXTEND_ESLINT=true react-scripts build",
+    "build": "EXTEND_ESLINT=true react-scripts build && cp build/index.html build/404.html",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "check": "eslint \"src/**\"",
