@@ -7,20 +7,38 @@
 
 ### Prerequisites
 
-- 최신 [Rustup](https://rustup.rs/)
-- [wasm-pack](https://github.com/rustwasm/wasm-pack)
-- [just](https://github.com/casey/just)
-- envsubst (GNU gettext)
+- [Node.js](https://nodejs.org/)
+- [npm](https://www.npmjs.com/)
+
+### Install
+
+본 저장소를 클론하고 다음 명령어를 실행하세요.
+
+```sh
+npm install
+```
 
 ### Build Page
 
 다음 명령어를 실행하세요.
 
 ```sh
-just build-page
+npm run build
 ```
 
 ### Dev Server
 
-원하는 정적 파일 서버 프로그램으로 dist 폴더를 여세요.
-wasm은 로컬 파일로 열었을 때 정상적으로 작동하지 않을 수 있습니다.
+다음 명령어를 실행하세요.
+
+```sh
+npm run start
+```
+
+### Check
+
+다음 명령어를 실행하세요.
+
+```sh
+npm run check
+npm run fix   # for auto fix
+```
