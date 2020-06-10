@@ -5,9 +5,10 @@ import { jsx } from '@emotion/core';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import * as Pages from './pages';
+import { PUBLIC_URL } from './constants';
 
 const App: FC = () => (
-  <BrowserRouter>
+  <BrowserRouter basename={PUBLIC_URL}>
     <Fragment>
       <Navbar />
       <Switch>
