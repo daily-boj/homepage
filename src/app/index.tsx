@@ -24,36 +24,36 @@ declare const root: HTMLDivElement;
 
 const App: FC = () => {
   const history = useHistory();
-  const [currentSectionIndex, setCurrentSectionIndex] = useState(determineSectionFromLocation(history?.location?.pathname));
-  const [isAnimating, setAnimating] = useState(false);
+  const [currentSectionIndex, setCurrentSectionIndex] = useState(determineSectionFromLocation(history.location.pathname));
 
   const sectionElements = [useRef<HTMLDivElement>(null), useRef<HTMLDivElement>(null), useRef<HTMLDivElement>(null), useRef<HTMLDivElement>(null), useRef<HTMLDivElement>(null)];
 
-  const currentSectionIndexRef = useRef<number>();
-  const isAnimatingRef = useRef<boolean>();
+  const currentSectionIndexRef = useRef<number>(currentSectionIndex);
+  const isAnimatingRef = useRef<boolean>(false);
+  const inner = useRef<HTMLDivElement>(null);
+
+  const updateSectionIndex = useCallback((newIndex: number) => {
+    isAnimatingRef.current = true;
+    setCurrentSectionIndex(newIndex);
+    history.push(Sections[newIndex]);
+    setTimeout(() => {
+      isAnimatingRef.current = false;
+    }, 500);
+  }, []);
 
   useEffect(() => {
     currentSectionIndexRef.current = currentSectionIndex;
   }, [currentSectionIndex]);
 
   useEffect(() => {
-    isAnimatingRef.current = isAnimating;
-  }, [isAnimating]);
-
-  useEffect(() => {
-    if (!history) {
-      return;
-    }
     history.listen((location) => {
       setCurrentSectionIndex(determineSectionFromLocation(location.pathname));
     });
-  }, [history]);
+  }, []);
 
-  const listener = useCallback((event: WheelEvent): void => {
+  const wheelListener = useCallback((event: WheelEvent): void => {
     const currentSectionIndex = currentSectionIndexRef.current;
-    const isAnimating = isAnimatingRef.current;
-
-    if (currentSectionIndex === undefined || isAnimating === undefined) {
+    if (isAnimatingRef.current) {
       return;
     }
 
@@ -61,17 +61,7 @@ const App: FC = () => {
     const isUp = deltaY < 0;
     const isDown = deltaY > 0;
 
-    if (!history) {
-      return;
-    }
-
-    if (isAnimating) {
-      return;
-    }
-
-
     const currentSection = sectionElements[currentSectionIndex].current;
-
     if (!currentSection) {
       return;
     }
@@ -85,28 +75,61 @@ const App: FC = () => {
     }
 
     event.preventDefault();
-    let newIndex: number | undefined = undefined;
     if (isUp && currentSectionIndex > 0) {
-      newIndex = currentSectionIndex - 1;
+      updateSectionIndex(currentSectionIndex - 1);
     } else if (isDown && currentSectionIndex < Sections.length - 1) {
-      newIndex = currentSectionIndex + 1;
+      updateSectionIndex(currentSectionIndex + 1);
     }
-
-    if (newIndex !== undefined) {
-      setAnimating(true);
-      setCurrentSectionIndex(newIndex);
-      history.push(Sections[newIndex]);
-      setTimeout(() => {
-        setAnimating(false);
-      }, 500);
-    }
-  }, [history]);
+  }, []);
 
   useEffect(() => {
-    window.addEventListener('wheel', listener);
+    window.addEventListener('wheel', wheelListener);
 
-    return (): void => window.removeEventListener('wheel', listener);
-  }, [listener]);
+    return (): void => window.removeEventListener('wheel', wheelListener);
+  }, [wheelListener]);
+
+  const touchStartXRef = useRef<number>(0);
+  const lastVectorRef = useRef<number>(0);
+  const touchStartListener = useCallback((event: TouchEvent): void => {
+    lastVectorRef.current = 0;
+    if (event.touches.length !== 1) {
+      return;
+    }
+    touchStartXRef.current = event.touches[0].pageX;
+  }, []);
+
+  const touchMoveListener = useCallback((event: TouchEvent): void => {
+    if (event.touches.length !== 1) {
+      return;
+    }
+    const v = event.touches[0].pageX - (touchStartXRef.current ?? event.touches[0].pageX);
+    lastVectorRef.current = v;
+    if (inner.current) {
+      inner.current.style.left = `${v}px`;
+      inner.current.style.transition = 'transform 1s ease';
+    }
+  }, []);
+
+  const touchEndListener = useCallback((_event: TouchEvent): void => {
+    const pageMovement = Math.abs(lastVectorRef.current / window.innerWidth) > 0.3 ? Math.sign(lastVectorRef.current) : 0;
+    updateSectionIndex(currentSectionIndexRef.current - pageMovement);
+    if (inner.current) {
+      inner.current.style.left = '0';
+      inner.current.style.transition = 'transform 1s ease, left 1s ease';
+    }
+  }, []);
+
+  useEffect(() => {
+    document.addEventListener('touchstart', touchStartListener);
+    document.addEventListener('touchmove', touchMoveListener);
+    document.addEventListener('touchend', touchEndListener);
+
+    return (): void => {
+      document.removeEventListener('touchstart', touchStartListener);
+      document.removeEventListener('touchmove', touchMoveListener);
+      document.removeEventListener('touchend', touchEndListener);
+    };
+  }, []);
 
   return (
     <Fragment>
@@ -125,10 +148,12 @@ const App: FC = () => {
             min-width: 100vw;
             max-width: 100vw;
             min-height: 100vh;
+            overflow: auto;
           }
           
-          will-change: transform;
+          will-change: left, transform;
         `}
+        ref={inner}
         style={{
           transform: `translate3d(-${100 * currentSectionIndex}vw, 0px, 0px)`
         }}
