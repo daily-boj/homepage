@@ -88,30 +88,40 @@ const App: FC = () => {
     return (): void => window.removeEventListener('wheel', wheelListener);
   }, [wheelListener]);
 
-  const touchStartXRef = useRef<number>(0);
-  const lastVectorRef = useRef<number>(0);
+  const touchStartTimeRef = useRef<number>(Date.now());
+  const touchStartRef = useRef<[number, number]>([0, 0]);
+  const lastVectorRef = useRef<[number, number]>([0, 0]);
   const touchStartListener = useCallback((event: TouchEvent): void => {
-    lastVectorRef.current = 0;
+    lastVectorRef.current = [0, 0];
     if (event.touches.length !== 1) {
       return;
     }
-    touchStartXRef.current = event.touches[0].pageX;
+    touchStartRef.current = [event.touches[0].pageX, event.touches[0].pageY];
+    touchStartTimeRef.current = Date.now();
   }, []);
 
   const touchMoveListener = useCallback((event: TouchEvent): void => {
     if (event.touches.length !== 1) {
       return;
     }
-    const v = event.touches[0].pageX - (touchStartXRef.current ?? event.touches[0].pageX);
-    lastVectorRef.current = v;
+    const { pageX, pageY } = event.touches[0];
+    const [x, y] = touchStartRef.current;
+    const [vx, vy] = [pageX - x, pageY - y];
+    lastVectorRef.current = [vx, vy];
     if (inner.current) {
-      inner.current.style.left = `${v}px`;
+      const angle = Math.abs(Math.atan2(vx, vy) * 180 / Math.PI);
+      const isHorizontal = Math.abs(90 - angle) <= 30;
+      inner.current.style.left = `${isHorizontal ? vx : 0}px`;
       inner.current.style.transition = 'transform 1s ease';
     }
   }, []);
 
   const touchEndListener = useCallback((_event: TouchEvent): void => {
-    const pageMovement = Math.abs(lastVectorRef.current / window.innerWidth) > 0.3 ? Math.sign(lastVectorRef.current) : 0;
+    const [vx, vy] = lastVectorRef.current;
+    const angle = Math.abs(Math.atan2(vx, vy) * 180 / Math.PI);
+    const isHorizontal = Math.abs(90 - angle) <= 30;
+    const timeUsed = (Date.now() - touchStartTimeRef.current, Math.min(500)) / 1000;
+    const pageMovement = Math.abs(vx / window.innerWidth) >= 0.2 * timeUsed && isHorizontal ? Math.sign(vx) : 0;
     updateSectionIndex(currentSectionIndexRef.current - pageMovement);
     if (inner.current) {
       inner.current.style.left = '0';
