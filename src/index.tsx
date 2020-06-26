@@ -3,7 +3,7 @@
 import React from 'react';
 import { jsx } from '@emotion/core';
 import ReactDOM from 'react-dom';
-import App from './App';
+import App from './app';
 import * as serviceWorker from './service-worker';
 import StyleReset from './styles/reset';
 import StyleDefault from './styles/default';

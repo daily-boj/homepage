@@ -1,7 +1,8 @@
 import React, { FC, ReactNode } from 'react';
-import { jsx } from '@emotion/core';
 import { Link as RouterLink } from 'react-router-dom';
 import Icon from './Icon';
+import { css } from '@emotion/core';
+import styled from '@emotion/styled';
 
 type LinkBase = Omit<React.AnchorHTMLAttributes<HTMLAnchorElement>, 'href'>;
 
@@ -9,6 +10,16 @@ export interface ExternalLinkProps extends LinkBase {
   to: string;
   children: ReactNode;
 }
+
+const Base = css`
+  text-decoration: underline;
+`;
+const BaseAnchor = styled.a`
+  ${Base}
+`;
+const BaseRouterLink = styled(RouterLink)`
+  ${Base}
+`;
 
 const External: FC<ExternalLinkProps> = ({ to, children, ...props }) => {
   let icon = <Icon kind='material' value='launch' />;
@@ -37,10 +48,10 @@ const External: FC<ExternalLinkProps> = ({ to, children, ...props }) => {
   } catch { /* ignore error */ }
 
   return (
-    <a className="link external" href={to} {...props} >
+    <BaseAnchor className="link external" href={to} {...props} >
       {icon}
       {children}
-    </a >
+    </BaseAnchor>
   );
 };
 
@@ -50,9 +61,9 @@ export interface InternalLinkProps extends LinkBase {
 }
 
 const Internal: FC<InternalLinkProps> = ({ to, children, ...props }) => (
-  <RouterLink to={to} className="link internal" {...props}>
+  <BaseRouterLink to={to} className="link internal" {...props}>
     {children}
-  </RouterLink>
+  </BaseRouterLink>
 );
 
 const Link = {

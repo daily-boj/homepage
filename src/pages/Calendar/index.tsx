@@ -1,12 +1,12 @@
 /* @jsx jsx */
 
-import React, { FC, Fragment } from 'react';
+import React, { forwardRef, ForwardRefRenderFunction } from 'react';
 import { jsx } from '@emotion/core';
 
-const CalendarPage: FC = () => (
-  <Fragment>
+const CalendarPage: ForwardRefRenderFunction<HTMLDivElement> = (_props, ref) => (
+  <div className="page" ref={ref}>
     Calendar! Core feature of daily boj homepage
-  </Fragment>
+  </div>
 );
 
-export default CalendarPage;
+export default forwardRef(CalendarPage);

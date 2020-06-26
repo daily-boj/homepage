@@ -13,16 +13,16 @@ module.exports = {
   },
   rules: {
     'react/prop-types': ['off'],
-    "semi": ["error", "always"],
-    "quotes": ["error", "single"],
-    "indent": ["error", 2, { "SwitchCase": 1, }],
-    "emotion/jsx-import": "error",
-    "emotion/no-vanilla": "error",
-    "emotion/import-from-emotion": "error",
-    "emotion/styled-import": "error",
-    "@typescript-eslint/no-unused-vars": [
-      "error",
-      { "vars": "all", "args": "all", "varsIgnorePattern": "^jsx$" }
+    'semi': ['error', 'always'],
+    'quotes': ['error', 'single'],
+    'indent': ['error', 2, { 'SwitchCase': 1, }],
+    'emotion/jsx-import': 'error',
+    'emotion/no-vanilla': 'error',
+    'emotion/import-from-emotion': 'error',
+    'emotion/styled-import': 'error',
+    '@typescript-eslint/no-unused-vars': [
+      'error',
+      { 'vars': 'all', 'args': 'all', 'varsIgnorePattern': '^jsx$|^_', 'argsIgnorePattern': '^_' }
     ]
   },
   settings: {

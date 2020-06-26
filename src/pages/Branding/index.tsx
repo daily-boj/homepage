@@ -1,12 +1,12 @@
 /* @jsx jsx */
 
-import React, { FC, Fragment } from 'react';
+import React, { FC } from 'react';
 import { jsx } from '@emotion/core';
 
 const BrandingPage: FC = () => (
-  <Fragment>
+  <div className="page">
     Can we branding daily-boj
-  </Fragment>
+  </div>
 );
 
 export default BrandingPage;

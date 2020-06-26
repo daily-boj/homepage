@@ -1,4 +1,5 @@
 export { default as Index } from './IndexPage';
+export { default as About } from './About';
 export { default as Branding } from './Branding';
 export { default as Calendar } from './Calendar';
 export { default as Member } from './Member';

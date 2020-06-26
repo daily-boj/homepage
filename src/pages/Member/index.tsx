@@ -1,12 +1,11 @@
 /* @jsx jsx */
-
-import React, { FC, Fragment } from 'react';
+import React, { forwardRef, ForwardRefRenderFunction } from 'react';
 import { jsx } from '@emotion/core';
 
-const MemberPage: FC = () => (
-  <Fragment>
+const MemberPage: ForwardRefRenderFunction<HTMLDivElement> = (_props, ref) => (
+  <div className="page" ref={ref}>
     This group contains a lot of goinmul
-  </Fragment>
+  </div>
 );
 
-export default MemberPage;
+export default forwardRef(MemberPage);

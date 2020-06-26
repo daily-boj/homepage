@@ -1,10 +1,10 @@
-import React, { FC, Fragment } from 'react';
+import React, { FC } from 'react';
 import { jsx } from '@emotion/core';
 
 const StatTierPage: FC = () => (
-  <Fragment>
+  <div className="page">
     Have we solved Gold IV? wow
-  </Fragment>
+  </div>
 );
 
 export default StatTierPage;

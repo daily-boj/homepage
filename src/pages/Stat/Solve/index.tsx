@@ -1,10 +1,10 @@
-import React, { FC, Fragment } from 'react';
+import React, { FC } from 'react';
 import { jsx } from '@emotion/core';
 
 const StatSolvePage: FC = () => (
-  <Fragment>
+  <div className="page">
     {'Statistics of solve rate'}
-  </Fragment>
+  </div>
 );
 
 export default StatSolvePage;

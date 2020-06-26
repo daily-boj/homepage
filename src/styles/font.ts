@@ -1,85 +1,59 @@
 import { css } from '@emotion/core';
-import { asset } from '../constants';
+import '@ibm/plex/css/ibm-plex.min.css';
+import IBMPlexSansKoreanExtraLight from '@ibm/plex/IBM-Plex-Sans-KR/fonts/complete/woff2/unhinted/IBMPlexSansKR-ExtraLight.woff2';
+import IBMPlexSansKoreanLight from '@ibm/plex/IBM-Plex-Sans-KR/fonts/complete/woff2/unhinted/IBMPlexSansKR-Light.woff2';
+import IBMPlexSansKoreanRegular from '@ibm/plex/IBM-Plex-Sans-KR/fonts/complete/woff2/unhinted/IBMPlexSansKR-Regular.woff2';
+import IBMPlexSansKoreanText from '@ibm/plex/IBM-Plex-Sans-KR/fonts/complete/woff2/unhinted/IBMPlexSansKR-Text.woff2';
+import IBMPlexSansKoreanMedium from '@ibm/plex/IBM-Plex-Sans-KR/fonts/complete/woff2/unhinted/IBMPlexSansKR-Medium.woff2';
+import IBMPlexSansKoreanBold from '@ibm/plex/IBM-Plex-Sans-KR/fonts/complete/woff2/unhinted/IBMPlexSansKR-Bold.woff2';
+import IBMPlexSansKoreanSemiBold from '@ibm/plex/IBM-Plex-Sans-KR/fonts/complete/woff2/unhinted/IBMPlexSansKR-SemiBold.woff2';
 
 const StyleFont = css`
 @font-face {
-    font-family: Metropolis;
-    src: url(${asset('fonts/metropolis/Metropolis-Thin.woff2')}) format('woff2');
+    font-family: 'IBM Plex Sans KR';
     font-style: normal;
-    font-weight: 100;
+    font-weight: 200;
+    src: local('IBM Plex Sans ExtraLight'), local('IBMPlexSans-ExtraLight'), url(${IBMPlexSansKoreanExtraLight}) format('woff2');
 }
 @font-face {
-    font-family: Metropolis;
-    src: url(${asset('fonts/metropolis/Metropolis-Light.woff2')}) format('woff2');
+    font-family: IBM Plex Sans KR;
     font-style: normal;
     font-weight: 300;
+    src: local('IBM Plex Sans Light'), local('IBMPlexSans-Light'), url(${IBMPlexSansKoreanLight}) format('woff2');
 }
 @font-face {
-    font-family: Metropolis;
-    src: url(${asset('fonts/metropolis/Metropolis-Regular.woff2')}) format('woff2');
+    font-family: IBM Plex Sans KR;
     font-style: normal;
     font-weight: 400;
+    src: local('IBM Plex Sans'), local('IBMPlexSans'), url(${IBMPlexSansKoreanRegular}) format('woff2');
 }
 @font-face {
-    font-family: Metropolis;
-    src: url(${asset('fonts/metropolis/Metropolis-Medium.woff2')}) format('woff2');
+    font-family: IBM Plex Sans KR;
+    font-style: normal;
+    font-weight: 450;
+    src: local('IBM Plex Sans Text'), local('IBMPlexSans-Text'), url(${IBMPlexSansKoreanText}) format('woff2');
+}
+@font-face {
+    font-family: IBM Plex Sans KR;
     font-style: normal;
     font-weight: 500;
+    src: local('IBM Plex Sans Medium'), local('IBMPlexSans-Medium'), url(${IBMPlexSansKoreanMedium}) format('woff2');
 }
 @font-face {
-    font-family: Metropolis;
-    src: url(${asset('fonts/metropolis/Metropolis-Bold.woff2')}) format('woff2');
+    font-family: IBM Plex Sans KR;
+    font-style: normal;
+    font-weight: 600;
+    src: local('IBM Plex Sans SemiBold'), local('IBMPlexSans-SemiBold'), url(${IBMPlexSansKoreanSemiBold}) format('woff2');
+}
+@font-face {
+    font-family: IBM Plex Sans KR;
     font-style: normal;
     font-weight: 700;
+    src: local('IBM Plex Sans Bold'), local('IBMPlexSans-Bold'), url(${IBMPlexSansKoreanBold}) format('woff2');
 }
-@font-face {
-    font-family: Metropolis;
-    src: url(${asset('fonts/metropolis/Metropolis-Black.woff2')}) format('woff2');
-    font-style: normal;
-    font-weight: 900;
-}
-
-@font-face {
-    font-family: Metropolis;
-    src: url(${asset('fonts/metropolis/Metropolis-ThinItalic.woff2')}) format('woff2');
-    font-style: italic;
-    font-weight: 100;
-}
-@font-face {
-    font-family: Metropolis;
-    src: url(${asset('fonts/metropolis/Metropolis-LightItalic.woff2')}) format('woff2');
-    font-style: italic;
-    font-weight: 300;
-}
-@font-face {
-    font-family: Metropolis;
-    src: url(${asset('fonts/metropolis/Metropolis-RegularItalic.woff2')}) format('woff2');
-    font-style: italic;
-    font-weight: 400;
-}
-@font-face {
-    font-family: Metropolis;
-    src: url(${asset('fonts/metropolis/Metropolis-MediumItalic.woff2')}) format('woff2');
-    font-style: italic;
-    font-weight: 500;
-}
-@font-face {
-    font-family: Metropolis;
-    src: url(${asset('fonts/metropolis/Metropolis-BoldItalic.woff2')}) format('woff2');
-    font-style: italic;
-    font-weight: 700;
-}
-@font-face {
-    font-family: Metropolis;
-    src: url(${asset('fonts/metropolis/Metropolis-BlackItalic.woff2')}) format('woff2');
-    font-style: italic;
-    font-weight: 900;
-}
-
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap');
 
 html {
-    font-family: -apple-system, BlinkMacSystemFont, Metropolis, Noto Sans KR, sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, 'IBM Plex Sans KR', sans-serif;
 }
 `;
 
