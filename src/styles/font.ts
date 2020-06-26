@@ -54,6 +54,7 @@ const StyleFont = css`
 
 html {
   font-family: -apple-system, BlinkMacSystemFont, 'IBM Plex Sans KR', sans-serif;
+  font-display: swap;
 }
 `;
 
