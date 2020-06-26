@@ -20,15 +20,27 @@ const IndexPage: ForwardRefRenderFunction<HTMLDivElement> = (_props, ref) => (
       font-weight: 300;
       font-size: 4vw;
       line-height: 108.5%;
-      letter-spacing: -0.1rem;
+      letter-spacing: -0.1vw;
 
       display: flex;
       flex-direction: column;
       justify-content: center;
+      
+      @media screen and (min-width: 768px) {
+        font-size: 4vw;
+      }
+
+      @media screen and (min-width: 468px) and (max-width: 767px) {
+        font-size: 6vw;
+      }
+      
+      @media screen and (max-width: 467px) {
+        font-size: 8vw;
+      }
     `}
   >
     <span css={css`
-      margin-left: 4rem;
+      margin-left: 4vw;
     `}>
       <Highlight>데일리 백준</Highlight>으로<br />
       <Highlight>하루</Highlight>에 적어도 <Highlight>한 문제</Highlight>는<br />

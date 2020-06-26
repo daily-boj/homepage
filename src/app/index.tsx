@@ -138,10 +138,18 @@ const App: FC = () => {
           css={css`
             position: absolute;
             left: 50vw;
-            top: 50%;
-            transform: translate(0, -50%);
+
             width: 100vw;
             height: 100vw;
+
+            @media screen and (min-width: 479px) {
+              top: 50%;
+              transform: translate(0, -50%);
+            }
+
+            @media screen and (max-width: 478px) {
+              top: 0;
+            }
           `}
         />
         <Pages.About ref={sectionElements[1]} />

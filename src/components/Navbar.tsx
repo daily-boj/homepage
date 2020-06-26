@@ -7,8 +7,10 @@ import styled from '@emotion/styled/macro';
 import * as Vars from '../styles/vars';
 import Logo from './Logo';
 
+const NavbarHeight = '3rem';
+
 const navbarBaseStyle = css`
-  height: 3rem;
+  height: ${NavbarHeight};
   margin: 0.4rem 0;
 `;
 
@@ -85,4 +87,5 @@ const NavbarBase: FC = () => (
 export default {
   Base: NavbarBase,
   Fake: NavbarFake,
+  height: NavbarHeight,
 };
