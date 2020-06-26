@@ -1,19 +1,30 @@
 {
   "files": {
-    "main.js": "/homepage/static/js/main.afcbbead.chunk.js",
-    "main.js.map": "/homepage/static/js/main.afcbbead.chunk.js.map",
+    "main.js": "/homepage/static/js/main.8440d7bc.chunk.js",
+    "main.js.map": "/homepage/static/js/main.8440d7bc.chunk.js.map",
     "runtime-main.js": "/homepage/static/js/runtime-main.ae933cb9.js",
     "runtime-main.js.map": "/homepage/static/js/runtime-main.ae933cb9.js.map",
-    "static/js/2.75912ce2.chunk.js": "/homepage/static/js/2.75912ce2.chunk.js",
-    "static/js/2.75912ce2.chunk.js.map": "/homepage/static/js/2.75912ce2.chunk.js.map",
+    "static/css/2.e87aaaad.chunk.css": "/homepage/static/css/2.e87aaaad.chunk.css",
+    "static/js/2.1354e65c.chunk.js": "/homepage/static/js/2.1354e65c.chunk.js",
+    "static/js/2.1354e65c.chunk.js.map": "/homepage/static/js/2.1354e65c.chunk.js.map",
     "index.html": "/homepage/index.html",
-    "precache-manifest.7e63414dcd1bb9b933197d16aebe2c4a.js": "/homepage/precache-manifest.7e63414dcd1bb9b933197d16aebe2c4a.js",
+    "precache-manifest.82ac888b5dd9b4d19b1d1a9d7d6281f2.js": "/homepage/precache-manifest.82ac888b5dd9b4d19b1d1a9d7d6281f2.js",
     "service-worker.js": "/homepage/service-worker.js",
-    "static/js/2.75912ce2.chunk.js.LICENSE.txt": "/homepage/static/js/2.75912ce2.chunk.js.LICENSE.txt"
+    "static/css/2.e87aaaad.chunk.css.map": "/homepage/static/css/2.e87aaaad.chunk.css.map",
+    "static/js/2.1354e65c.chunk.js.LICENSE.txt": "/homepage/static/js/2.1354e65c.chunk.js.LICENSE.txt",
+    "static/media/ibm-plex.min.css": "/homepage/static/media/IBMPlexSerif-ThinItalic.ee6f7943.woff2",
+    "static/media/IBMPlexSansKR-Bold.woff2": "/homepage/static/media/IBMPlexSansKR-Bold.de1fb76c.woff2",
+    "static/media/IBMPlexSansKR-ExtraLight.woff2": "/homepage/static/media/IBMPlexSansKR-ExtraLight.228d0bc2.woff2",
+    "static/media/IBMPlexSansKR-Light.woff2": "/homepage/static/media/IBMPlexSansKR-Light.3abd2c7d.woff2",
+    "static/media/IBMPlexSansKR-Medium.woff2": "/homepage/static/media/IBMPlexSansKR-Medium.7cec5dc9.woff2",
+    "static/media/IBMPlexSansKR-Regular.woff2": "/homepage/static/media/IBMPlexSansKR-Regular.df525897.woff2",
+    "static/media/IBMPlexSansKR-SemiBold.woff2": "/homepage/static/media/IBMPlexSansKR-SemiBold.9ecd19f8.woff2",
+    "static/media/IBMPlexSansKR-Text.woff2": "/homepage/static/media/IBMPlexSansKR-Text.670e41da.woff2"
   },
   "entrypoints": [
     "static/js/runtime-main.ae933cb9.js",
-    "static/js/2.75912ce2.chunk.js",
-    "static/js/main.afcbbead.chunk.js"
+    "static/css/2.e87aaaad.chunk.css",
+    "static/js/2.1354e65c.chunk.js",
+    "static/js/main.8440d7bc.chunk.js"
   ]
 }
