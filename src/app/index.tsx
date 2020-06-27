@@ -87,6 +87,26 @@ const App: FC = () => {
 
     return (): void => window.removeEventListener('wheel', wheelListener);
   }, [wheelListener]);
+  
+  const keyboardListener = useCallback((event: KeyboardEvent): void => {
+    const currentSectionIndex = currentSectionIndexRef.current;
+
+
+    if (event.key === 'ArrowLeft') {
+      updateSectionIndex((currentSectionIndex - 1 + Sections.length) % Sections.length);
+      return;
+    }
+
+    if (event.key === 'ArrowRight') {
+      updateSectionIndex((currentSectionIndex + 1) % Sections.length);
+    }
+  }, []);
+
+  useEffect(() => {
+    window.addEventListener('keydown', keyboardListener);
+
+    return (): void => window.removeEventListener('keydown', keyboardListener);
+  }, [keyboardListener]);
 
   const touchStartTimeRef = useRef<number>(Date.now());
   const touchStartRef = useRef<[number, number]>([0, 0]);
