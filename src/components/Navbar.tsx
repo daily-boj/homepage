@@ -68,13 +68,13 @@ const OtherNavLink = styled(NavLink)`
 
 const NavbarBase: FC = () => (
   <NavbarHeader>
-    <BrandNavLink to="/">
+    <BrandNavLink to="/" exact>
       <LogoBaseStyled>
         <LogoUseStyled />
       </LogoBaseStyled>
     </BrandNavLink>
 
-    <OtherNavLink id="nav-about" to="/about" exact>
+    <OtherNavLink id="nav-about" to="/about">
       소개
     </OtherNavLink>
     <OtherNavLink id="nav-newbie" to="/newbie">
