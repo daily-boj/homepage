@@ -32,7 +32,7 @@ const NavbarHeader = styled.header`
   grid-gap: min(max(6vw, 1.2em), 3rem);
 
   padding: 0 min(max(4vw, 1em), 4rem);
-  border-radius: 1rem;
+  border-radius: 1.5rem;
 
   z-index: 100;
 
@@ -52,11 +52,17 @@ const LogoUseStyled = styled(Logo.Use)`
   stroke: white;
 `;
 
-const BrandNavLink = styled(NavLink)``;
+const BrandNavLink = styled(NavLink)`
+  &.active {
+    -webkit-filter: drop-shadow( 0px 0px 6px rgba(255, 255, 255, .8));
+    filter: drop-shadow( 0px 0px 6px rgba(255, 255, 255, .8));
+}
+`;
 const OtherNavLink = styled(NavLink)`
   &.active {
     color: ${Vars.MenuSelected};
-    text-shadow: 0px 0px 8px rgba(255, 255, 255, 0.39);
+    text-shadow: 0px 0px 6px rgba(255, 255, 255, 0.8);
+    font-weight: 500;
   }
 `;
 

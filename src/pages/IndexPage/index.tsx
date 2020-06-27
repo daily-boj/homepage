@@ -5,7 +5,7 @@ import { css, jsx } from '@emotion/core';
 import styled from '@emotion/styled';
 
 const Highlight = styled.span`
-  font-weight: 400;
+  font-weight: 450;
 `;
 
 const IndexPage: ForwardRefRenderFunction<HTMLDivElement> = (_props, ref) => (
@@ -20,7 +20,7 @@ const IndexPage: ForwardRefRenderFunction<HTMLDivElement> = (_props, ref) => (
       font-weight: 300;
       font-size: 4vw;
       line-height: 108.5%;
-      letter-spacing: -0.1vw;
+      letter-spacing: -0.065em;
 
       display: flex;
       flex-direction: column;

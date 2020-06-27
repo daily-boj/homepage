@@ -19,7 +19,7 @@ const AboutPage: ForwardRefRenderFunction<HTMLDivElement> = (_props, ref) => (
 
       font-weight: 300;
       line-height: 108.5%;
-      letter-spacing: -0.1vw;
+      letter-spacing: -0.065em;
 
       display: flex;
       flex-direction: column;

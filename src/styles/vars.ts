@@ -4,7 +4,7 @@ import { hsl, hsla } from 'polished';
 export const NavbarBackground = hsl(230, 0.05, 0.15);
 export const NavbarForeground = hsl(230, 0.05, 0.90);
 
-export const MenuSelected = hsl(230, 0.65, 0.85);
+export const MenuSelected = hsl(230, 1, 1);
 
 // index page
 export const IntroductionBackground = hsl(0, 0.10, 0.95);

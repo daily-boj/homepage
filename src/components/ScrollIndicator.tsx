@@ -16,15 +16,29 @@ const ScrollIndicator: FC<SVGAttributes<SVGSVGElement>> = (props) => (
       cx="11" cy="11"
       r="5"
       css={css`
-        animation: 1s ease-out 0.5s infinite ${keyframes`
-          from {
-            opacity: 1;
-            transform: translateX(0);
+        animation: 2.5s infinite ${keyframes`
+          0% {
+            opacity: 0;
+            transform: translateX(20px);
+          }
+        
+          30% {
+            opacity: 0;
+            transform: translateX(20px);
           }
 
-          to {
+          50% {
+            opacity: 1;
+          }
+
+          70% {
             opacity: 0;
-            transform: translateX(8px);
+            transform: translateX(2px);
+          }
+
+          100% {
+            opacity: 0;
+            transform: translateX(2px);
           }
         `};
       `}
