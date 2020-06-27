@@ -1,7 +1,19 @@
-# homepage
+<div align="center">
+  <a href="https://daily-boj.github.io/homepage">
+    <img src="docs/banner.png" alt="banner"/>
+  </a>
+  <h1>homepage</h1>
+  <p>
+    <strong>데일리 백준 홈페이지</strong>
+  </p>
 
-데일리 백준 홈페이지입니다.
-[여기](https://daily-boj.github.io/homepage)를 눌러 접속할 수 있습니다.
+  <p>
+    <a href="https://github.com/daily-boj/homepage/deployments/activity_log?environment=github-pages"><img alt="GitHub deployments" src="https://img.shields.io/github/deployments/daily-boj/homepage/github-pages?label=github-pages&logo=github"></a>
+    <a href="package.json"><img alt="Libraries.io dependency status for GitHub repo" src="https://img.shields.io/librariesio/github/daily-boj/homepage"></a>
+    <a href="LICENSE"><img alt="GitHub" src="https://img.shields.io/github/license/daily-boj/homepage"></a>
+    <a href="https://daily-boj.github.io/homepage"><img alt="Website" src="https://img.shields.io/website?down_color=gray&down_message=offline&up_color=green&up_message=online&url=https%3A%2F%2Fdaily-boj.github.io%2Fhomepage"></a>
+  </p>
+</div>
 
 ## Development
 
