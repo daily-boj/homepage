@@ -12,7 +12,7 @@ const RasterizeSvg: FC<{ children: ReactElement }> = ({ children, ...props }) =>
       if (canvas.current) {
         // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
         canvas.current.getContext('2d')!.drawImage(img, 0, 0);
-        // URL.revokeObjectURL(img.src);
+        URL.revokeObjectURL(img.src);
       }
     };
 
