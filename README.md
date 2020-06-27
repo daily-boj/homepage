@@ -1,6 +1,6 @@
 <div align="center">
   <a href="https://daily-boj.github.io/homepage">
-    <img alt="banner" src="https://github.com/daily-boj/homepage/blob/master/docs/images/banner.png"/>
+    <img alt="banner" src="/docs/images/banner.png"/>
   </a>
   <h1>homepage</h1>
   <p>
