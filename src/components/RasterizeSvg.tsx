@@ -39,7 +39,6 @@ const RasterizeSvg: FC<{ children: ReactElement }> = ({ children, ...props }) =>
     fakeRoot.style.position = 'absolute';
     fakeRoot.style.opacity = '0';
     fakeRoot.style.zIndex = '-1';
-    document.body.appendChild(fakeRoot);
     render(children, fakeRoot, async () => {
       const svg = fakeRoot.querySelector('svg');
       if (svg == null) {
@@ -72,15 +71,15 @@ const RasterizeSvg: FC<{ children: ReactElement }> = ({ children, ...props }) =>
               for (const rule of sheet.rules) {
                 // eslint-disable-next-line @typescript-eslint/no-explicit-any
                 const ruleAny = rule as any;
-                if (current.matches(ruleAny.selectorText)) {
+                if (!current.matches(ruleAny.selectorText)) {
+                  continue;
+                }
+                for (const key of Object.values(ruleAny.style) as string[]) {
                   // eslint-disable-next-line @typescript-eslint/no-explicit-any
-                  for (const key of Object.values(ruleAny.style) as any[]) {
-                    // eslint-disable-next-line @typescript-eslint/no-explicit-any
-                    (current.style as any)[key] = ruleAny.style[key];
-                  }
+                  (current.style as any)[key] = ruleAny.style[key];
                 }
               }
-            } catch{
+            } catch {
               /* do nothing */
             }
           }
@@ -88,9 +87,6 @@ const RasterizeSvg: FC<{ children: ReactElement }> = ({ children, ...props }) =>
         toVisit.push(...current.childNodes);
       }
       setSvgNode(svg);
-      setTimeout(() => {
-        document.body.removeChild(fakeRoot);
-      }, 100);
     });
   }, []);
 
