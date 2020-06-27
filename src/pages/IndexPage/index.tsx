@@ -13,9 +13,9 @@ const IndexPage: ForwardRefRenderFunction<HTMLDivElement> = (_props, ref) => (
     className="page"
     ref={ref}
     css={css`
-      z-index: 10;
-      
       height: 100%;
+
+      background: linear-gradient(90deg, #FFFFFF 0%, #F5F5F5 100%);
 
       font-weight: 300;
       font-size: 4vw;
@@ -40,6 +40,8 @@ const IndexPage: ForwardRefRenderFunction<HTMLDivElement> = (_props, ref) => (
     `}
   >
     <span css={css`
+      z-index: 10;
+      
       margin-left: 4vw;
     `}>
       <Highlight>데일리 백준</Highlight>으로<br />

@@ -7,7 +7,7 @@ const StyleDefault = css`
 }
 
 body {
-  background-color: ${Vars.Background};
+  background: ${Vars.Background};
   letter-spacing: -0.04em;
   font-size: 1.3rem;
 }
