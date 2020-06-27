@@ -1,6 +1,6 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
+  "short_name": "daily-boj",
+  "name": "daily-boj homepage",
   "icons": [
     {
       "src": "/homepage/favicon-192.png",
