@@ -92,13 +92,13 @@ const App: FC = () => {
     const currentSectionIndex = currentSectionIndexRef.current;
 
 
-    if (event.key === 'ArrowLeft') {
-      updateSectionIndex((currentSectionIndex - 1 + Sections.length) % Sections.length);
+    if (event.key === 'ArrowLeft' && currentSectionIndex !== 0) {
+      updateSectionIndex(currentSectionIndex - 1);
       return;
     }
 
-    if (event.key === 'ArrowRight') {
-      updateSectionIndex((currentSectionIndex + 1) % Sections.length);
+    if (event.key === 'ArrowRight' && currentSectionIndex !== Sections.length - 1) {
+      updateSectionIndex(currentSectionIndex + 1);
     }
   }, []);
 
